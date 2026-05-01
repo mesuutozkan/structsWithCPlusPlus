@@ -72,9 +72,9 @@ int main()
 
 	mineAccount.getBalance();
 
-	bankAccount* pBankAccount = new bankAccount("Account B", 200);
+	//Add a dynamic memory usage example with bankAccount struct
 
-	pBankAccount->getAccountName();
+	bankAccount* pBankAccount = new bankAccount("Account B", 200);
 
 	pBankAccount->deposit(100, *pBankAccount);
 

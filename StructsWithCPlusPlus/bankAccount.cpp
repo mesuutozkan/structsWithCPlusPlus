@@ -62,7 +62,7 @@ public:
 
 int main()
 {
-	bankAccount mineAccount("myAccount", 100);
+	bankAccount mineAccount("Account A", 100);
 	
 	mineAccount.deposit(50, mineAccount);
 
@@ -72,15 +72,33 @@ int main()
 
 	mineAccount.getBalance();
 
+	bankAccount* pBankAccount = new bankAccount("Account B", 200);
+
+	pBankAccount->getAccountName();
+
+	pBankAccount->deposit(100, *pBankAccount);
+
+	pBankAccount->getBalance();
+
+	pBankAccount->withdraw(25.5, *pBankAccount);
+
+	pBankAccount->getBalance();
+
+	delete pBankAccount;		//if there is a heap memory usage, call destructor. stack does it automatically.
+
 }
 
 /**
 * 
 * output:
 * 
-Account created: myAccount
+Account created: Account A
 Current balance after deposit 50 : 150
 Current balance after withdraw 20 : 130
-Account deleted: myAccount
+Account created: Account B
+Current balance after deposit 100 : 300
+Current balance after withdraw 25.5 : 274.5
+Account deleted: Account B
+Account deleted: Account A
 * 
 **/
